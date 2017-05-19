@@ -1,0 +1,40 @@
+import java.util.Scanner;
+
+/**
+ * Created by karishmaverma on 5/18/2017.
+ */
+public class ReverseString
+{
+
+	static String reverseString(String s)
+	{
+
+		char[] originalStrToChar = s.toCharArray();
+		char[] reverseStrToChar = new char[originalStrToChar.length];
+		int j = 0;
+		for (int i = originalStrToChar.length-1; i >=0; i--)
+		{
+			reverseStrToChar[j++] = originalStrToChar[i];
+		}
+		return new String(reverseStrToChar);
+	}
+
+	static boolean checkPalindrome(String s)
+	{
+		if(s.equals(reverseString(s)))
+		{
+			return true;
+		}
+		else
+			return false;
+	}
+
+	public static void main(String args[])
+	{
+		Scanner scanner = new Scanner(System.in);
+		String input = scanner.nextLine();
+		System.out.print(reverseString(input));
+		System.out.println("The String is Palindrome :"+checkPalindrome(input));
+	}
+
+}
