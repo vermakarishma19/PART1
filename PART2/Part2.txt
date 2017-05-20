@@ -1,0 +1,23 @@
+-How do you design an application with JMS messaging?
+For JMS- there is are client that are loosly coupled and exchange messages using Destination.
+There are different messaging domain- point to point, Publish/subscribe.
+There are different providers-ActiveMQ, RabbitMQ, Kafka etc..
+
+
+- How do you handle exception in JMS consumers and how to you recover?
+JMS Exception provides a generic way of handling all the JMS related exceptions.
+If in client acknowledge mode, consumer should call Session.recover to recover and redeliver message.
+If auto-acknowledge mode/ dups-OK-mode, it should pause for a few seconds and call MessageConsumer.receive.
+
+
+- How do you implement LRU or MRU cache?
+LRU can be implemented using 2 data structures-Queue/Linkedlist and Hash
+
+
+- Describe singleton design pattern – how would you implement?
+Ensures only one instance of class is created in JVM.
+Probably use a private constructor to restrict instantiation.
+
+
+- Describe properties of Java String.
+Java string is immutable.
